@@ -276,3 +276,115 @@ input {
     opacity: 0.7;
 }
 
+
+/* ================= MOBILE (iPhone) ================= */
+@media screen and (max-width: 430px) {
+
+    /* Remove all images & decorative elements */
+    img,
+    .floral-left,
+    .floral-right,
+    .rose,
+    .heartenvelope,
+    .scroll-image {
+        display: none !important;
+    }
+
+    /* Global spacing + font scaling */
+    html, body {
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ---------- INTRO PAGE ---------- */
+    .intro {
+        height: auto;
+        padding: 4rem 1.5rem;
+        justify-content: center;
+    }
+
+    .intro-welcome {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .intro-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .start-button {
+        font-size: 1.2rem;
+        padding: 10px 14px;
+    }
+
+    /* ---------- ENTER PAGE ---------- */
+    .enter-page {
+        padding: 3rem 1.5rem 4rem;
+    }
+
+    .enter-title {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .madlib-form {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .reveal-button {
+        font-size: 1.2rem;
+        padding: 10px 14px;
+        margin-top: 2rem;
+    }
+
+    /* ---------- REVEAL PAGE ---------- */
+    .reveal-page {
+        align-items: flex-start;
+        padding: 3rem 1.5rem;
+        font-family: 'IM Fell English', serif;
+    }
+
+    .scroll-container {
+        width: 100%;
+        animation: none;
+    }
+
+    .story {
+        position: static;
+        transform: none;
+        width: 100%;
+        opacity: 1;
+        animation: none;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .startover-button {
+        font-size: 1.2rem;
+        margin-top: 2.5rem;
+    }
+
+    /* ---------- BACK ARROW ---------- */
+    .back-arrow {
+        top: 20px;
+        left: 20px;
+    }
+
+    .back-arrow img {
+        width: 40px;
+        transform: none;
+    }
+}
