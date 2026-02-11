@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}Enter Your Words{% endblock %}
+{% block content %}
+
+<div class="enter-page">
+    <a href="{{ url_for('home') }}" class="back-arrow">
+        <img 
+            src="{{ url_for('static', filename='back-arrow.png') }}" 
+            alt="Back"
+        >
+    </a>
+
+
+    <h1 class="enter-title">Enter the following words</h1>
+
+    <form method="POST" action="{{ url_for('reveal') }}" class="madlib-form" id="madlib-form">
+
+        <div class="field">
+            <label>Color</label>
+            <input type="text" name="color" required>
+        </div>
+
+        <div class="field">
+            <label>Item of Clothing</label>
+            <input type="text" name="item-of-clothing" required>
+        </div>
+
+        <div class="field">
+            <label>Adjective 1</label>
+            <input type="text" name="adjective-1" required>
+        </div>
+
+        <div class="field">
+            <label>Adjective 2</label>
+            <input type="text" name="adjective-2" required>
+        </div>
+
+        <div class="field">
+            <label>Body Part 1</label>
+            <input type="text" name="body-part-1" required>
+        </div>
+
+        <div class="field">
+            <label>Body Part 2</label>
+            <input type="text" name="body-part-2" required>
+        </div>
+
+        <div class="field">
+            <label>Body Part 3</label>
+            <input type="text" name="body-part-3" required>
+        </div>
+
+        <div class="field">
+            <label>Superlative</label>
+            <input type="text" name="superlative" required>
+        </div>
+ 
+        <div class="field">
+            <label>Number</label>
+            <input type="text" name="number" required>
+        </div>
+
+        <div class="field">
+            <label>Adjective 3</label>
+            <input type="text" name="adjective-3" required>
+        </div>    
+
+        <div class="field">
+            <label>Adjective 4</label>
+            <input type="text" name="adjective-4" required>
+        </div> 
+
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div class="field">
+            <label>Food</label>
+            <input type="text" name="food" required>
+        </div>
+
+        <div class="field">
+            <label>Liquid/Drink</label>
+            <input type="text" name="liquid" required>
+        </div>    
+
+        <div class="field">
+            <label>Noun 1</label>
+            <input type="text" name="noun-1" required>
+        </div>  
+
+        <div class="field">
+            <label>Noun 2</label>
+            <input type="text" name="noun-2" required>
+        </div>  
+
+        <div class="field">
+            <label>Campus Building</label>
+            <input type="text" name="campus-building" required>
+        </div>  
+
+        <div class="field">
+            <label>Verb</label>
+            <input type="text" name="verb" required>
+        </div>
+
+        <div class="field">
+            <label>Adverb</label>
+            <input type="text" name="adverb" required>
+        </div>   
+
+        <div class="field">
+            <label>Columbia Alum</label>
+            <input type="text" name="columbia-alum" required>
+        </div>   
+
+        <div class="field">
+            <label>Comparative Ending in -er</label>
+            <input type="text" name="comparative-ending" required>
+        </div>   
+    </form>
+
+    <button
+        type="submit"
+        class="reveal-button"
+        form="madlib-form"
+    >
+        Cast Love Spell
+    </button>
+
+</div>
+
+{% endblock %}

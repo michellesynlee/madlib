@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Blue and White's Madlib!{% endblock %}
+{% block content %}
+
+<div class="intro">
+
+
+    <img 
+        src="{{ url_for('static', filename='floral-left.png') }}" 
+        alt="" 
+        class="floral floral-left"
+    >
+
+    <div class="intro-welcome">
+        Welcome to Blue and White's 
+        <br> Valentine Madlib
+    </div>
+    <div class="intro-description">
+        Written by Arim Lee and Iris Eisenman
+    </div>
+    
+    <a href="{{ url_for('enterpage') }}" class="start-button">
+        Start
+    </a>
+
+    <img 
+        src="{{ url_for('static', filename='rose.png') }}" 
+        alt="" 
+        class="floral rose"
+    >
+
+
+    <img 
+        src="{{ url_for('static', filename='heartenvelope.png') }}" 
+        alt="" 
+        class="floral heartenvelope"
+    >
+
+    <img 
+        src="{{ url_for('static', filename='floral-right.png') }}" 
+        alt="" 
+        class="floral floral-right"
+    >
+
+</div>
+
+{% endblock %}

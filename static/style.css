@@ -1,0 +1,278 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #B0BEE6;
+    /*font-family: Georgia, serif;*/
+    font-family: 'Libre Baskerville', serif;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.intro-welcome {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #1B207A;
+}
+
+.intro-description {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-bottom: 40px;
+    color: #1B207A;
+}
+
+.start-button {
+    /*font-family: Georgia, serif;*/
+    font-family: 'Libre Baskerville', serif;
+    background-color: white;
+    color: #1B207A;
+
+    font-size: 1.7rem;      
+    padding: 12px 18px;      
+    border-radius: 10px; 
+    text-decoration: none;     
+
+    border: none;            
+    cursor: pointer;
+}
+
+.floral-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 550px;
+    height: auto;
+}
+
+.floral-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 550px;
+    height: auto;
+}
+
+.rose {
+    position: absolute;
+    width: 480px;         
+    height: auto;
+
+    top: 85%;             
+    left: 10%;    
+
+    transform: translateY(-50%);
+    opacity: 0;
+    z-index: 1;
+
+
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.heartenvelope {
+    position: absolute;
+    width: 300px;         
+    height: auto;
+
+    top: 20%;             
+    left: 70%;    
+
+    opacity: 0;                 /* start hidden */
+    z-index: 1;
+
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.4s;        /* ← 1 second delay */
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateY(10px);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(-50%) translateY(0) rotate(5deg);
+    }
+}
+
+/* -----------------enter page------------------- */
+
+.back-arrow {
+    position: absolute;
+    top: 74px;
+    left: 74px;
+    z-index: 50;
+}
+
+.back-arrow img {
+    width: 66px;
+    transform: scale(0.75);
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.back-arrow img:hover {
+    transform: scale(0.75) translateX(-3px);
+    opacity: 1;
+}
+
+.enter-page {
+    min-height: 100vh;
+    background-color: #B0BEE6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 6rem;
+}
+
+.enter-title {
+    font-family: 'Libre Baskerville', serif;
+    color: #1B207A;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.madlib-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem 2rem;
+    width: 1000px;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+    .madlib-form {
+        grid-template-columns: 1fr;
+        width: 320px;
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 0.55rem;
+}
+
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-family: Georgia, serif;
+}
+
+.reveal-button {
+    /*font-family: Georgia, serif;*/
+    font-family: 'Libre Baskerville', serif;
+    background-color: #1B207A;
+    color: #ffffff;
+
+    font-size: 1.7rem;      
+    padding: 12px 16px;      
+    border-radius: 10px; 
+    text-decoration: none;    
+
+    border: none;            
+    cursor: pointer;
+    align-self: center;
+}
+
+/* -----------------reveal page------------------- */
+
+.reveal-page {
+    min-height: 100vh;
+    max-height: 70%;
+    overflow: hidden;
+    background-color: #B0BEE6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'IM Fell English', serif;
+}
+
+.scroll-container {
+    position: relative;
+    width: 1000px;
+    max-width: 92%;
+    animation: scrollAppear 0.8s ease forwards;
+}
+
+.scroll-image {
+    width: 100%;
+    display: block;
+}
+
+.story {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 78%;
+    text-align: center;
+
+    opacity: 0;
+    animation: textFadeIn 0.8s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes scrollAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -52%);
+    }
+}
+
+.startover-button {
+    font-family: 'IM Fell English', serif;
+    background: none;          /* remove background */
+    color: #000000;            /* black text */
+
+    font-size: 1.7rem;
+    padding: 0;                /* no button padding */
+    border-radius: 0;
+    text-decoration: none;
+
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.startover-button:hover {
+    opacity: 0.7;
+}
+
