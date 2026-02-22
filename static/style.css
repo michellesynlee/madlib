@@ -277,12 +277,14 @@ input {
 
 .credits {
     position: absolute;
-    bottom: 8%;
-    left: 8%;
-    font-size: 0.8rem;
+    bottom: 2%;
+    right: 2%;
+    font-size: 0.6rem;
     opacity: 0.8;
     text-align: left;
     z-index: 5;
+    text-align: right;
+    color: #012611;
 }
 
 .scroll-image {
@@ -442,6 +444,10 @@ input {
     /* Hide decorative images */
     .left-image,
     .right-image {
+        display: none;
+    }
+
+    .credits {
         display: none;
     }
 
