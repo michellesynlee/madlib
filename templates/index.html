@@ -4,6 +4,25 @@
 
 <div class="intro">
 
+    <div class="hero-wrapper">
+        <img 
+            src="{{ url_for('static', filename='meow.png') }}" 
+            class="intropic"
+        >
+
+        <a href="{{ url_for('enterpage') }}" class="start-overlay">
+            start
+        </a>
+    </div>
+
+    <img src="{{ url_for('static', filename='rose.png') }}" class="floral rose">
+    <img src="{{ url_for('static', filename='heartenvelope.png') }}" class="floral heartenvelope">
+
+</div>
+
+{% endblock %}
+
+    <!--
 
     <img 
         src="{{ url_for('static', filename='floral-left.png') }}" 
@@ -11,30 +30,19 @@
         class="floral floral-left"
     >
 
+
     <div class="intro-welcome">
         Welcome to Blue and White's 
         <br> Valentine Madlib
     </div>
+
     <div class="intro-description">
         Written by Arim Lee and Iris Eisenman (Designed by Michelle Lee)
     </div>
-    
+
     <a href="{{ url_for('enterpage') }}" class="start-button">
         Start
     </a>
-
-    <img 
-        src="{{ url_for('static', filename='rose.png') }}" 
-        alt="" 
-        class="floral rose"
-    >
-
-
-    <img 
-        src="{{ url_for('static', filename='heartenvelope.png') }}" 
-        alt="" 
-        class="floral heartenvelope"
-    >
 
     <img 
         src="{{ url_for('static', filename='floral-right.png') }}" 
@@ -42,6 +50,4 @@
         class="floral floral-right"
     >
 
-</div>
-
-{% endblock %}
+    -->

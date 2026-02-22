@@ -3,90 +3,123 @@
 {% block content %}
 
 <div class="reveal-page">
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
 
-    <div class="scroll-container">
-
+    <!-- LEFT IMAGE -->
     <img 
-        src="{{ url_for('static', filename='scroll.png') }}" 
-        alt="Ancient scroll"
-        class="scroll-image"
+        src="{{ url_for('static', filename='moon.png') }}" 
+        class="side-image left-image"
     >
 
-    <div class="story">
-        <h1>Columbia Love Spell</h1>
-
-        <p>
-            This spell will serve to attract a lover, situationship, ex-situationship,
-            hookup, eye-contactship—basically any kind of ship.
-            Caution: extremely potent. This spell is not for the faint of heart.
-        </p>
-
-        <p>
-            On the night of a full moon, find three
-            <strong>{{ request.form.get('color') }}</strong> objects,
-            the luckiest color. Tuck these into your
-            <strong>{{ request.form.get('item-of-clothing') }}</strong>.
-            Stand upon the foot end of your Twin XL bed and visualize the traits of the ideal lover.
-            <strong>{{ request.form.get('adjective-1') }}</strong>.
-            Not <strong>{{ request.form.get('adjective-2') }}</strong> at all.
-            Nice <strong>{{ request.form.get('body-part-1') }}</strong>.
-            Even nicer <strong>{{ request.form.get('body-part-2') }}</strong>.
-            Gorgeous <strong>{{ request.form.get('body-part-3') }}</strong>.
-            But most importantly, the
-            <strong>{{ request.form.get('superlative') }}</strong> of them all.
-        </p>
-
-        <p>
-            Go to Floor <strong>{{ request.form.get('number') }}</strong> of the Stacks.
-            Find the <strong>{{ request.form.get('adjective-3') }}</strong>-est book and tear out a page.
-            Don’t worry—nobody was going to read it anyway.
-            Draw on it the <strong>{{ request.form.get('adjective-4') }}</strong> figure of
-            <strong>{{ request.form.get('name') }}</strong> with your
-            <strong>{{ request.form.get('body-part-2') }}</strong>.
-        </p>
-
-        <p>
-            Then, take <strong>{{ request.form.get('food') }}</strong> from Ferris,
-            <strong>{{ request.form.get('liquid') }}</strong> from JJ’s,
-            essence of <strong>{{ request.form.get('noun-1') }}</strong>,
-            and <strong>{{ request.form.get('noun-2') }}</strong>-flavored ice cream from the
-            John Jay dessert bar, and stir the potion in a red solo cup.
-        </p>
-
-        <p>
-            Head to the slowest water filter on campus and let the water trickle
-            into your cup for <strong>{{ request.form.get('number') }}</strong> seconds.
-            Clog the bathroom sink on Floor <strong>{{ request.form.get('number') }}</strong> of
-            <strong>{{ request.form.get('campus-building') }}</strong>.
-            The potion should now be <strong>{{ request.form.get('color') }}</strong>.
-            <strong>{{ request.form.get('verb') }}</strong> your piece of paper with your
-            <strong>{{ request.form.get('body-part-3') }}</strong> and throw it into the sink.
-            Then chant <strong>{{ request.form.get('adverb') }}</strong> until your piece of paper fully sinks:
-        </p>
-
-        <blockquote>
-            “O Great Spirit of <strong>{{ request.form.get('columbia-alum') }}</strong>, so good to me<br>
-            I come to thee for love’s embrace<br>
-            An effortless wit, a smiling face<br>
-            Bring us together,<br>
-            Nobody is <strong>{{ request.form.get('comparative-ending') }}</strong><br>
-            Than my dearest darling <strong>{{ request.form.get('name') }}</strong>!”
-        </blockquote>
-
-        <p>
-            Wait patiently for <strong>{{ request.form.get('number') }}</strong> days and
-            <strong>{{ request.form.get('number') }}</strong> hours for the spell to work its magic…
-            and don’t be too shocked at the powerfully effective results.
-        </p>
+    <!-- RIGHT IMAGE -->
+    <img 
+        src="{{ url_for('static', filename='pray.png') }}" 
+        class="side-image right-image"
+    >
 
 
-        <a href="{{ url_for('home') }}" class="startover-button">
-            Start Over
-        </a>
+<div class="scroll-container">
+
+    <div class="scroll-card">
+
+        <!-- ================= FRONT (SCROLL) ================= -->
+        <div class="scroll-front">
+
+            <img 
+                src="{{ url_for('static', filename='scroll.png') }}" 
+                alt="Ancient scroll"
+                class="scroll-image"
+            >
+
+            <div class="story">
+                <h1>Columbia Love Spell</h1>
+
+                <p>
+                    This spell will serve to attract a lover, situationship, ex-situationship,
+                    hookup, eye-contactship—basically any kind of ship.
+                    Caution: extremely potent. This spell is not for the faint of heart.
+                </p>
+
+                <p>
+                    On the night of a full moon, find three
+                    <strong>{{ request.form.get('color') }}</strong> objects,
+                    the luckiest color. Tuck these into your
+                    <strong>{{ request.form.get('item-of-clothing') }}</strong>.
+                    Stand upon the foot end of your Twin XL bed and visualize the traits of the ideal lover.
+                    <strong>{{ request.form.get('adjective-1') }}</strong>.
+                    Not <strong>{{ request.form.get('adjective-2') }}</strong> at all.
+                    Nice <strong>{{ request.form.get('body-part-1') }}</strong>.
+                    Even nicer <strong>{{ request.form.get('body-part-2') }}</strong>.
+                    Gorgeous <strong>{{ request.form.get('body-part-3') }}</strong>.
+                    But most importantly, the
+                    <strong>{{ request.form.get('superlative') }}</strong> of them all.
+                </p>
+
+                <p>
+                    Go to Floor <strong>{{ request.form.get('number') }}</strong> of the Stacks.
+                    Find the <strong>{{ request.form.get('adjective-3') }}</strong>-est book and tear out a page.
+                    Don’t worry—nobody was going to read it anyway.
+                    Draw on it the <strong>{{ request.form.get('adjective-4') }}</strong> figure of
+                    <strong>{{ request.form.get('name') }}</strong> with your
+                    <strong>{{ request.form.get('body-part-2') }}</strong>.
+                </p>
+
+                <p>
+                    Then, take <strong>{{ request.form.get('food') }}</strong> from Ferris,
+                    <strong>{{ request.form.get('liquid') }}</strong> from JJ’s,
+                    essence of <strong>{{ request.form.get('noun-1') }}</strong>,
+                    and <strong>{{ request.form.get('noun-2') }}</strong>-flavored ice cream from the
+                    John Jay dessert bar, and stir the potion in a red solo cup.
+                </p>
+
+                <p>
+                    Head to the slowest water filter on campus and let the water trickle
+                    into your cup for <strong>{{ request.form.get('number') }}</strong> seconds.
+                    Clog the bathroom sink on Floor <strong>{{ request.form.get('number') }}</strong> of
+                    <strong>{{ request.form.get('campus-building') }}</strong>.
+                    The potion should now be <strong>{{ request.form.get('color') }}</strong>.
+                    <strong>{{ request.form.get('verb') }}</strong> your piece of paper with your
+                    <strong>{{ request.form.get('body-part-3') }}</strong> and throw it into the sink.
+                    Then chant <strong>{{ request.form.get('adverb') }}</strong> until your piece of paper fully sinks:
+                </p>
+
+                <blockquote>
+                    “O Great Spirit of <strong>{{ request.form.get('columbia-alum') }}</strong>, so good to me<br>
+                    I come to thee for love’s embrace<br>
+                    An effortless wit, a smiling face<br>
+                    Bring us together,<br>
+                    Nobody is <strong>{{ request.form.get('comparative-ending') }}</strong><br>
+                    Than my dearest darling <strong>{{ request.form.get('name') }}</strong>!”
+                </blockquote>
+
+                <p>
+                    Wait patiently for <strong>{{ request.form.get('number') }}</strong> days and
+                    <strong>{{ request.form.get('number') }}</strong> hours for the spell to work its magic…
+                    and don’t be too shocked at the powerfully effective results.
+                </p>
+
+                <a href="{{ url_for('home') }}" class="startover-button">
+                    Start Over
+                </a>
+            </div>
+
+        </div>
 
     </div>
 
 </div>
+
+</div>
+
+
+<!-- Flip Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const card = document.querySelector(".scroll-card");
+    card.addEventListener("click", function() {
+        card.classList.toggle("flipped");
+    });
+});
+</script>
 
 {% endblock %}

@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-color: #B0BEE6;
+    background-color: #bfd3c3;
     /*font-family: Georgia, serif;*/
     font-family: 'Libre Baskerville', serif;
 }
@@ -17,8 +17,77 @@ html, body {
     position: relative;
 }
 
+.hero-wrapper {
+    position: relative;
+    width: 500px;
+    display: inline-block;
+    padding: 40px;    
+    pointer-events: none;      /* creates outer buffer */
+    animation: enableHover 0s forwards;
+    animation-delay: 1.5s; /* same duration as fadeGrow */
+}
+
+/* Make sure final scale stays consistent */
+.intropic {
+    width: 450px;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeGrow 1.5s ease-out forwards;
+    transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+/* Animation */
+@keyframes enableHover {
+    to {
+        pointer-events: auto;
+    }
+}
+
+@keyframes fadeGrow {
+    to {
+        opacity: 1;
+        transform: scale(2.1);
+    }
+}
+
+/* When hovering */
+.hero-wrapper:hover .intropic {
+    filter: blur(3px);
+    opacity: 0.85;
+}
+
+/* START overlay */
+.start-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    font-weight: bold;
+    font-style: italic;
+    color: #041901;
+    text-decoration: none;
+
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.2s ease;
+
+    pointer-events: auto; /* ensure clickable */
+}
+
+/* Show START when hovering wrapper */
+.hero-wrapper:hover .start-overlay {
+    opacity: 1;
+}
+
+/* Grow when hovering START itself */
+.start-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
 .intro-welcome {
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: bold;
     margin-bottom: 30px;
     color: #1B207A;
@@ -61,49 +130,34 @@ html, body {
     width: 550px;
     height: auto;
 }
+/* ========================= */
+/* Gentle Side Sway */
+/* ========================= */
 
+@keyframes sway {
+    0%   { transform: rotate(-3deg); }
+    50%  { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Rose */
 .rose {
     position: absolute;
-    width: 480px;         
-    height: auto;
-
-    top: 85%;             
-    left: 10%;    
-
-    transform: translateY(-50%);
-    opacity: 0;
-    z-index: 1;
-
-
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: 0.6s;
+    width: 300px;
+    top: 55%;
+    left: 10%;
+    transform-origin: center;
+    animation: sway 3s ease-in-out infinite;
 }
 
+/* Heart Envelope */
 .heartenvelope {
     position: absolute;
-    width: 300px;         
-    height: auto;
-
-    top: 20%;             
-    left: 70%;    
-
-    opacity: 0;                 /* start hidden */
-    z-index: 1;
-
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: 0.4s;        /* ← 1 second delay */
-}
-
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(-50%) translateY(10px);
-    }
-    to {
-        opacity: 0.9;
-        transform: translateY(-50%) translateY(0) rotate(5deg);
-    }
+    width: 230px;
+    top: 20%;
+    left: 80%;
+    transform-origin: center;
+    animation: sway 2.5s ease-in-out infinite;
 }
 
 /* -----------------enter page------------------- */
@@ -130,7 +184,7 @@ html, body {
 
 .enter-page {
     min-height: 100vh;
-    background-color: #B0BEE6;
+    background-color: #bfd3c3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,7 +195,7 @@ html, body {
 
 .enter-title {
     font-family: 'Libre Baskerville', serif;
-    color: #1B207A;
+    color: #011e04;
     margin-top: 6rem;
     margin-bottom: 3rem;
 }
@@ -169,7 +223,7 @@ html, body {
 
 label {
     font-size: 0.9rem;
-    color: white;
+    color: rgb(255, 255, 255);
     margin-bottom: 0.55rem;
 }
 
@@ -183,7 +237,7 @@ input {
 .reveal-button {
     /*font-family: Georgia, serif;*/
     font-family: 'Libre Baskerville', serif;
-    background-color: #1B207A;
+    background-color: #012107;
     color: #ffffff;
 
     font-size: 1.7rem;      
@@ -202,7 +256,7 @@ input {
     min-height: 100vh;
     max-height: 70%;
     overflow: hidden;
-    background-color: #B0BEE6;
+    background-color: #b7d3ba;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,10 +278,10 @@ input {
 
 .story {
     position: absolute;
-    top: 52%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 78%;
+    width: 70%;
     text-align: center;
 
     opacity: 0;
@@ -276,115 +330,143 @@ input {
     opacity: 0.7;
 }
 
+/* ========================= */
+/* SIDE DECORATIVE IMAGES */
+/* ========================= */
 
-/* ================= MOBILE (iPhone) ================= */
-@media screen and (max-width: 430px) {
+.side-image {
+    position: absolute;
+    z-index: 1;
+}
 
-    /* Remove all images & decorative elements */
-    img,
-    .floral-left,
-    .floral-right,
+/* Left moon */
+.left-image {
+    left: 2%;        /* closer to edge */
+    top: 18%;        /* slightly higher */
+    transform: translateY(-50%);
+    width: 400px; 
+}
+
+/* Right character */
+.right-image {
+    right: 3%;       /* closer to edge */
+    bottom: 5%;      /* lower */
+    width: 320px;   
+}
+
+/* ========================= */
+/* MOBILE VERSION */
+/* ========================= */
+
+@media (max-width: 1700px) {
+
+    /* Hide decorative elements */
     .rose,
-    .heartenvelope,
-    .scroll-image {
-        display: none !important;
+    .heartenvelope {
+        display: none;
     }
 
-    /* Global spacing + font scaling */
-    html, body {
-        min-height: 100%;
-        overflow-x: hidden;
-    }
-
-    /* ---------- INTRO PAGE ---------- */
+    /* Stack layout */
     .intro {
-        height: auto;
-        padding: 4rem 1.5rem;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        padding: 40px 20px;
+        gap: 40px;
+        width: 50%;
     }
 
-    .intro-welcome {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
+    /* Make hero-wrapper stack */
+    .hero-wrapper {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .intro-description {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
+    /* Move START above image */
+    .start-overlay {
+        position: static;
+        transform: none;
+        opacity: 1;
+
+        background: #01230b;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        margin-top: 5rem;
     }
 
-    .start-button {
-        font-size: 1.2rem;
-        padding: 10px 14px;
-    }
-
-    /* ---------- ENTER PAGE ---------- */
-    .enter-page {
-        padding: 3rem 1.5rem 4rem;
-    }
-
-    .enter-title {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        font-size: 1.8rem;
-    }
-
-    .madlib-form {
+    .intropic {
         width: 100%;
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
+        margin-bottom: 10rem;
     }
 
-    label {
-        font-size: 0.85rem;
+    /* Disable blur on mobile */
+    .hero-wrapper:hover .intropic {
+        filter: none;
+        opacity: 1;
     }
 
-    input {
-        font-size: 1rem;
-        padding: 12px;
+    @media (max-width: 768px) {
+    .start-overlay:active {
+        transform: scale(0.96);
+    }
+}
+}
+
+/* ========================= */
+/* CLEAN MOBILE TEXT ONLY */
+/* ========================= */
+
+@media (max-width: 1500px) {
+
+    /* Hide decorative images */
+    .left-image,
+    .right-image {
+        display: none;
     }
 
-    .reveal-button {
-        font-size: 1.2rem;
-        padding: 10px 14px;
-        margin-top: 2rem;
+    /* Hide scroll/frame image */
+    .scroll-image {
+        display: none;
     }
 
-    /* ---------- REVEAL PAGE ---------- */
-    .reveal-page {
-        align-items: flex-start;
-        padding: 3rem 1.5rem;
-        font-family: 'IM Fell English', serif;
-    }
-
+    /* Remove scroll positioning */
     .scroll-container {
         width: 100%;
+        max-width: 100%;
         animation: none;
     }
 
+    /* Reset reveal page layout */
+    .reveal-page {
+        background-color: #b7d3ba;
+        padding: 40px 20px;
+        align-items: flex-start;
+    }
+
+    /* Make story normal flow instead of absolute */
     .story {
         position: static;
         transform: none;
         width: 100%;
         opacity: 1;
         animation: none;
-        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .story h1 {
+        font-size: 1.8rem;
+    }
+
+    .story p,
+    blockquote {
+        font-size: 1rem;
         line-height: 1.6;
     }
 
-    .startover-button {
-        font-size: 1.2rem;
-        margin-top: 2.5rem;
-    }
-
-    /* ---------- BACK ARROW ---------- */
-    .back-arrow {
-        top: 20px;
-        left: 20px;
-    }
-
-    .back-arrow img {
-        width: 40px;
-        transform: none;
-    }
 }
