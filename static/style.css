@@ -262,6 +262,12 @@ input {
     align-items: center;
     overflow: hidden;
     font-family: 'IM Fell English', serif;
+    padding-top: 150px;  
+}
+
+.back-arrow {
+    top: 20px;      /* closer to top */
+    left: 20px;     /* closer to edge */
 }
 
 .scroll-container {
@@ -370,107 +376,93 @@ input {
     bottom: 5%;      /* lower */
     width: 320px;   
 }
-
 /* ========================= */
-/* MOBILE VERSION */
+/* MOBILE & TABLET VERSION */
 /* ========================= */
 
-@media (max-width: 1700px) {
+@media (max-width: 1024px) {
 
-    /* Hide decorative elements */
+    /* ---------------- INTRO PAGE ---------------- */
+
     .rose,
     .heartenvelope {
         display: none;
     }
 
-    /* Stack layout */
     .intro {
+        width: 100%;                 /* 👈 FIXED (was 50%) */
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 40px 20px;
-        gap: 40px;
-        width: 50%;
+        gap: 30px;
     }
 
-    /* Make hero-wrapper stack */
     .hero-wrapper {
-        width: 50vw;
+        width: 85vw;                 /* 👈 FIXED (was 50vw) */
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    /* Move START above image */
+    .intropic {
+        width: 80%;
+        margin-bottom: 0;
+    }
+
     .start-overlay {
-        position: static;
-        transform: none;
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
         opacity: 1;
+
+        display: inline-block;      /* 👈 important */
+        margin-top: 160px;
 
         background: #01230b;
         color: white;
         padding: 16px 32px;
         border-radius: 12px;
 
-        font-size: 1.4rem;
-        letter-spacing: 3px;
-        margin-top: 5rem;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+
+        transition: transform 0.1s ease;
     }
 
-    .intropic {
-        width: 100%;
-        margin-bottom: 10rem;
+    .start-overlay:active {
+        transform: scale(0.97);
     }
 
-    /* Disable blur on mobile */
+    /* Disable hover blur on mobile */
     .hero-wrapper:hover .intropic {
         filter: none;
         opacity: 1;
     }
 
-    @media (max-width: 768px) {
-    .start-overlay:active {
-        transform: scale(0.96);
-    }
-}
-}
+    /* ---------------- REVEAL PAGE ---------------- */
 
-/* ========================= */
-/* CLEAN MOBILE TEXT ONLY */
-/* ========================= */
-
-@media (max-width: 1500px) {
-
-    /* Hide decorative images */
     .left-image,
-    .right-image {
-        display: none;
-    }
-
-    .credits {
-        display: none;
-    }
-
-    /* Hide scroll/frame image */
+    .right-image,
+    .credits,
     .scroll-image {
         display: none;
     }
 
-    /* Remove scroll positioning */
     .scroll-container {
         width: 100%;
         max-width: 100%;
         animation: none;
     }
 
-    /* Reset reveal page layout */
     .reveal-page {
-        background-color: #b7d3ba;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 40px 20px;
-        align-items: flex-start;
     }
 
-    /* Make story normal flow instead of absolute */
     .story {
         position: static;
         transform: none;
@@ -481,7 +473,7 @@ input {
     }
 
     .story h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .story p,
@@ -489,5 +481,4 @@ input {
         font-size: 1rem;
         line-height: 1.6;
     }
-
 }
